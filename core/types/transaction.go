@@ -202,7 +202,7 @@ func (tx *Transaction) decodeTyped(b []byte) (TxData, error) {
 		err := rlp.DecodeBytes(b[1:], &inner)
 		return &inner, err
 	default:
-		return nil, ErrTxTypeNotSupported
+		return nil, nil
 	}
 }
 

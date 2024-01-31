@@ -313,7 +313,7 @@ func (r *Receipt) decodeTyped(b []byte) error {
 		r.DepositNonce = data.DepositNonce
 		return r.setFromRLP(receiptRLP{data.PostStateOrStatus, data.CumulativeGasUsed, data.Bloom, data.Logs})
 	default:
-		return ErrTxTypeNotSupported
+		return nil
 	}
 }
 
